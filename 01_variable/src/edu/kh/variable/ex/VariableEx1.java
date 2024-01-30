@@ -27,6 +27,7 @@ public static void main(String[] args) {
 	 *  
 	 *  [문자형]
 	 *  char	(2byte) * 문자 하나, 문자 양옆에''
+	 *  String : 객체(char 여러개가 붙은 객체)
 	 * */
 	
 	//변수 선언하기 : 메모리에 공간 할당(변수 넣는 박스 만들기)

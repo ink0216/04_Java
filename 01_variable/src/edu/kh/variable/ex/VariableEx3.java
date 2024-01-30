@@ -20,7 +20,7 @@ public static void main(String[] args) {
 	int num1 = 290;
 	byte result1 = (byte) num1; //byte로 강제 형변환해서 byte 변수에 저장 가능
 	System.out.println("num1 :" +num1);
-	System.out.println("result1 :" +result1); //엥쓰!!!!!!!!!!!!!!!!!!!!!!! 
+	System.out.println("result1 :" +result1); //256이 날아감 
 	
 	//강제 형변환 확인 2
 	//	->실수를 정수로 변환해서 소수점 없애기(데이터 손실 활용)
@@ -63,8 +63,7 @@ public static void main(String[] args) {
 	//-------------------------------------------------------------------------------------------------------
 	//강제 형변환 + 자동 형변환 + 값 처리 원칙
 	//근데 앞쪽이나 뒤쪽의 아무거나 하나 double빼도 됨
-	System.out.println((double)num3 / num4);
-	
+	System.out.println((double)num3 / num4);  
 	// (int) 5 / (int) 2 
 	
 	// 강제 형변환 
@@ -99,7 +98,7 @@ public static void main(String[] args) {
 	System.out.println("temp1 :" +temp1); //127
 	System.out.println("temp2 :" +temp2); //-128 한 칸 넘어가서 왼쪽으로 넘어감
 	System.out.println("temp3 :" +temp3); //-127 두 칸 넘어가서 왼쪽으로 두 번 넘어감
-	
+	// VariableEx4 클래스 이름 첫글자는 대문자, 카멜표기법 적용! 
 	
 	
 	
