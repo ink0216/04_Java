@@ -15,12 +15,13 @@ public class Account {
 	//-외부에서 간접접근할 수 있는 기능을 제공해야 한다! (간접 접근 기능)
 	//매개변수, 반환 기능 필요
 	
-	//객체의 속성 만듦 (값들이 저장될 공간 만듦)
+	//객체의 속성 만듦 (값들이 저장될 공간 만듦) //추상적인 것들만 만들어놓기(틀, 공통적인 것)
 	private String name; //이름(예금주)
 	private String accountNumber; //계좌번호
 	private long balance; //잔액(큰돈 쓰려고 int아닌 long으로)
 	private String password; //비밀번호
 	//->private붙였으면 직접적으로는 접근 못하고 간접적으로 접근해야 함
+	//private안 붙이면 외부인이 변경 가능
 	
 	//객체는 Heap영역에 저장돼있는데 Heap영역에 있는 것들은 빈칸으로 존재할 수 없어서
 	//초기화 안해둬도 자동으로 0 들어가있음
@@ -44,6 +45,7 @@ public class Account {
 	}
 	
 	//name 변수의 값을 돌려보내주는 간접 접근 기능 만들기
+	//외부에서 이름을 가져가고 싶어하면?
 	public String getName() {
 		//set<->get
 		return name;
@@ -57,6 +59,9 @@ public class Account {
 	//this : 현재 이 객체
 	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber; 
+		//this.accountNumber : 현재 객체의 accountNumber
+		//accountNumber : 전달받아온 accountNumber
+		
 				//외부에 있는 값을 얻어와서 대입해야하므로 매개변수 필요한데
 				//매개변수의 자료형이 String
 			//현재 객체가 가지고 있는 accountNumber에 얻어온 값 대입
@@ -108,8 +113,8 @@ public class Account {
 	public void withdraw(String pw, long amount) {
 		// 자바에서는 문자열 비교를 ==로 할 수 없음!
 		//자바에서 기본 자료형 8개 비교는 ==로 하는 것 맞지만
-		//	객체(참조형) 비교는 A.equals(B)로 해야 함
-		//String은 기본자료형 아닌 char의 객체임 참조형
+		//	객체(참조형) 비교는 A.equals(B) 메서드를 이용해서 해야 함
+		//String은 기본자료형 아닌 char의 객체임. 참조형임
 		
 		//
 		//현재 계좌 비밀번호(password)와 
