@@ -25,10 +25,9 @@ public class ArrayEx1 {
 	 * 배열 선언, 할당, 초기화
 	 */
 	public void method1() {
-		int num; //배열이 아닌, 변수 선언
+//		int num; //배열이 아닌, 변수 선언
 		//Stack영역에, int자료형을 저장할 수 있는 변수를 생성하고,
 		//그 변수의 이름을 num으로 지정
-		
 		
 		int[] arr; //배열 선언
 		//Stack 영역에, int[] 자료형을 참조할 변수를 생성하고

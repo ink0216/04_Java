@@ -8,11 +8,11 @@ public class Student {
 	//필드 작성(학생이라면 가져야 하는)
 	//모든 학생들이 공통적으로 쓸 수 있는 필드
 	public static String schoolName="KH대학교";
-	
+	//final int  : int형 상수
 	//누구든지 쓸 수 있는데 바뀌면 안되는 값
 	public static final int MIN_VALUE =0; //스킬 역량 최소치
 	public static final int MAX_VALUE =100; //스킬 역량 최대치
-	
+	//int형 상수
 	
 	private String name; //이름
 	private String studentNumber; //학번
