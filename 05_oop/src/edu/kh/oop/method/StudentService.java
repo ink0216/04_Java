@@ -174,7 +174,7 @@ System.out.print("HTML 역량을 수정할 학생 선택(1:std1 / 2:std2) : ");
 		//이전 점수 + 입력 받은 역량점수를 전달 받은 학생에게 세팅
 		
 		int before=s.getJava();
-		s.setJava(s.getJava()+input); //setJava보다 괄호 안의 getJava가 먼저 실행됨
+		s.setJava(before+input); //setJava보다 괄호 안의 getJava가 먼저 실행됨
 		
 		//점수가 최대/최소값을 넘지 못하게 처리하기
 		if(s.getJava()>Student.MAX_VALUE) s.setJava(Student.MAX_VALUE); //static에 정의된 것은 클래스명으로 접근하는 게 정석
@@ -196,7 +196,7 @@ System.out.print("HTML 역량을 수정할 학생 선택(1:std1 / 2:std2) : ");
 		int input=sc.nextInt();
 		
 		int before=s.getHtml();
-		s.setHtml(s.getHtml()+input);
+		s.setHtml(before+input);
 		
 		//점수가 최대/최소값을 넘지 못하게 처리하기
 			if(s.getHtml()>Student.MAX_VALUE) s.setHtml(Student.MAX_VALUE); //static에 정의된 것은 클래스명으로 접근하는 게 정석

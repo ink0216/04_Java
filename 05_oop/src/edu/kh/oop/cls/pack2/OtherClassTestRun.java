@@ -2,7 +2,6 @@ package edu.kh.oop.cls.pack2;
 
 import edu.kh.oop.basic.Account;
 import edu.kh.oop.basic.Nation;
-
 public class OtherClassTestRun {
 //ClassTest1과 다른 패키지에 존재하는 클래스
 //	여기서 ClassTest1을 호출 가능? 노! ClassTest
