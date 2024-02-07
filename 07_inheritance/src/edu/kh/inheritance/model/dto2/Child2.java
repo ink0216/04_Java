@@ -2,7 +2,12 @@ package edu.kh.inheritance.model.dto2;
 
 import edu.kh.inheritance.model.dto.Parent;
 
-public class Child2 extends Parent {
+//final 클래스 -> 상속 불가 ->상속이 안되므로 오버라이딩도 안됨
+//						-> 제공되는 클래스 그대로 사용해야 하는 경우
+//							-> ex) String
+//final 메서드 : 상속은 되지만(Child1을 GrandChild1으로 상속했음) 오버라이딩이 안됨
+
+public final class Child2 extends Parent {
 	//집 나간 자식
 	//얘도 부모(다른패키지에 존재하므로 import 해야 함) 상속받도록 만들기
 	//Parent가 가지던 접근제한자(public, protected, default, private) 중 public, protected만 쓸 수 있음

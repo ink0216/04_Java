@@ -62,5 +62,13 @@ public class Child1 extends Parent{
 		//오버로딩 : 같은 이름의 메서드를 여러 개 쓰는 것(매개변수의 구성이 다르면 사용 가능)
 		
 	}
+	//final 메서드 확인(==오버라이딩 불가함을 확인)
+	/*메서드 오버라이딩을 허락하지 않는 이유
+	 * - 메서드의 기능이 변하면 안되는 경우
+	 * 		상속받은 자식들도 이 메서드 그대로 사용하게 하고싶을 때*/
+	public final void onlyChild1() {
+		//오로지 Child1만 쓰는 것
+		System.out.println("final 메서드 입니다.");
+	}
 	
 }
