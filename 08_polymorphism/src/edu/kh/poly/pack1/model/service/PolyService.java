@@ -282,15 +282,20 @@ public class PolyService {
 		//		결과로 false가 반환됨
 		System.out.println("----------------------------------");
 		SmartPhone s2 = new Iphone(); 
+		//참조 : 아이폰 타입 객체를 힙 영역에 만들고, 그 객체의 주소를 스마트폰 타입 참조형변수 s2에 저장 
 		//힙에 아이폰이 있는데 그 안에 슈퍼 구문으로 부모 부분이 생성됨
 		
-		System.out.print("s1 instanceof SmartPhone : ");
-		System.out.println(s1 instanceof SmartPhone);  //true
+		System.out.print("s2 instanceof SmartPhone : ");
+		System.out.println(s2 instanceof SmartPhone);  //true
+		//s2가 참조하는 객체가 스마트폰 클래스로 만들어진 스마트폰 타입 맞아?
+		//전체는 아닌데 일부분은 맞으니까 true맞음(일부분이라도 맞으면 true나옴)
+		//s2가 아이폰을 참조하고 있는데
+		//아이폰이 스마트폰을 상속받아서 아이폰 안에 스마트폰이 부모로 존재하므로
+		
 		
 		System.out.print("s2 instanceof Iphone : "); 
-		System.out.println(s2 instanceof Iphone);//true
-		//s2가 참조하는 객체가 Iphone클래스로 만들어진 것 맞아?
-		//전체는 아닌데 일부분은 맞으니까 true맞음
+		System.out.println(s2 instanceof Iphone);//true(284번 줄에서 Iphone객체를 참조한다고 돼있으니까)
+		
 	}
 	/**
 	 * 객체 배열 + 업캐스팅 + 다운 캐스팅(부모를 자식으로 강제형변환) + instanceof
