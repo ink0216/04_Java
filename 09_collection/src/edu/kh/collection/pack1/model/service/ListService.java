@@ -180,7 +180,23 @@ public class ListService {
 	 * - 추가, 조회, 수정, 제거 구현해보기(while문으로 무한히 돌리면서)
 	 */
 	public void bookManage() {
+		/*ArrayList는 배열처럼 다닥다닥 붙어있음 -> 옆으로 이동하며 하나씩 탐색하는 것이 편함
+		 * ArrayList : 배열 형태의 리스트
+		 * -장점 : 검색이 빠름(많은 데이터 중 특정한 것 찾기)
+		 * -단점 : 중간 삽입, 제거가 느림(뒤의 것 밀고 넣거나, 뒤의 것 당기고 삭제하거나)
+		 * 					중간 삽입, 제거가 필요한 경우엔 ArrayList 부적절->LinkedList사용
+		 * 
+		 * *******LinkedList*******
+		 * 데이터 저장되는 부분은 맨 아랫칸밖에 없고 그 위의 두 칸은 옆 칸들과 연결된 곳
+		 * 중간의 객체를 삭제하고 싶으면 없애고 화살표만 연결하면 됨
+		 * 근데 LinkedList는 검색이 느린 단점
+		 * LinkedList : 연결된 형태의 리스트(기차, 줄줄이 소세지)
+		 * -장점 : 중간 삽입, 제거가 빠름
+		 * -단점 : 검색이 느림
+		 * */
 		List<Book> bookList = new ArrayList<Book>();
+		//LinkedList로 바꾸고 싶으면 바로 윗줄의 ArrayList를 LinkedList로 바꾸면 됨
+		//LinkedList와 ArrayList 둘다 List를 상속받았기 때문에 
 		Scanner sc = new Scanner(System.in);
 		int input = 0; //메뉴 입력 받기
 		do {
