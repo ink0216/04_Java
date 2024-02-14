@@ -5,6 +5,7 @@ import edu.kh.exception.pack2.model.service.ExceptionHandlingService2;
 public class ExceptionHandlingRun2 {
 public static void main(String[] args) {
 	ExceptionHandlingService2 service = new ExceptionHandlingService2();
-	service.method1();
+//	service.method1();
+	service.method2();
 }
 }

@@ -122,9 +122,7 @@ public void method4() {
 	//inputString() 메서드를 이용해서
 	//문자열을 두 번 입력 받아
 	//하나로 합쳐서 출력하기
-	
 	try {
-		
 		System.out.print("첫 번째 문자열 입력 : ");
 		String str1 = inputString(); 
 		//inputString()호출 ->throws IOException 작성됨->호출한 곳에서 처리하겠다

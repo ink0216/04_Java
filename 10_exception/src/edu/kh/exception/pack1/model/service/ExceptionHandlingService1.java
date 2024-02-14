@@ -83,7 +83,7 @@ public class ExceptionHandlingService1 {
 		
 		System.out.print("결과 : ");
 		try { //예외가 발생할 것 같은 구문
-		System.out.println((double)input1/input2);
+		System.out.println(input1/input2);
 		// 0으로 나누는 경우
 		// java.lang.ArithmeticException: / by zero
 		// -> 산술적 예외 : 0으로 나눌 수 없음
