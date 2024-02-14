@@ -126,7 +126,11 @@ public class JavaAPIService {
 		
 	}
 	/**
-	 * String의 불변성(상수처럼 변하지 않는 성질)
+	 * String의 불변성(immutable ,상수처럼 변하지 않는 성질)
+	 * mutable : 가변성
+	 * String = 문자열을 저장하는 객체(속성과 기능 가짐)
+	 * "문자열". 하면 사용가능한 기능 많이 나옴(객체여서)
+	 * - 문자열이 수정되면 새로운 String 객체가 생성되는 특징이 있다! ->문자열 수정되면 주소가 바뀜
 	 */
 	public void method3() {
 		String str = "hello"; //str은 hello가 들어있는 String객체를 참조해서 그 주소를 담고있어서 그 뒤에서 값 바꾸면
@@ -137,16 +141,111 @@ public class JavaAPIService {
 		//System.identityHashCode(str) : 필드가 아닌 주소값을 이용해서 만든 해시코드(식별번호)
 		//						-> 같은 객체에 저장된 값이 변했어도 주소는 일정
 		//						-> identityHashCode도 일정해야 한다.
+		//코드가 같다면 같은 주소를 가진다는 뜻
 		
-		str = "world"; //그 주소에 가서 
+		str = "world"; //그 주소에 가서 덮어씌움
 		System.out.println(str);
 		System.out.println(System.identityHashCode(str));
 		
 		str +="!!!";
 		System.out.println(str);
 		System.out.println(System.identityHashCode(str));
-		
+		System.out.println("========================================");
+		System.out.println("최종 : "+str);
 		// System.identityHashCode(str) ->다 다른 값이 나옴
 		//		->str이 참조하고 있는 객체가 변하고 있다!!!
+	}
+	/**
+	 * 불변성을 효율적으로 활용하는 방법
+	 * String 리터럴("")로 생성된 객체 활용해보기
+	 * -> 동일한 리터럴(값)을 이용해 String 객체를 여러 개 생성한 경우
+	 * 		추가적으로 객체를 생성하지 않고 기존에 존재하는 String 객체의 주소를 반환(재활용함)
+	 */
+	public void method4()	{
+		String temp1 ="Hello!!"; //0x400생성
+		String temp2 ="Hello!!"; //0x400 주소만 반환 받음(기존 객체 재활용(얕은 복사))
+		//동일한 리터럴을 쓰면 객체를 두 번 만들지 않고 한번만 만들어서 그 주소를 
+		System.out.println(System.identityHashCode(temp1));
+		System.out.println(System.identityHashCode(temp2));
+		//같은 주소로 됨(리터럴이 똑같아서)
+		
+		//temp1과 temp2가 같음을 비교하는 방법
+		
+		//객체의 필드 값(저장된 값)을 비교(문자열 비교)
+		System.out.println("저장된 값 비교 : "+temp1.equals(temp2));
+		
+		//변수에 저장된 값(주소) 비교
+		System.out.print("주소를 비교 : ");
+		System.out.println(temp1== temp2);
+		//같은 곳 참조하면(주소가 같으면) 같은 것임->String이라고 무조건 equals로 안하고 비교연산으로 해도 된다
+	}
+	/**
+	 * 사용자(개발자)가 관리하는 String 객체 생성
+	 * - ""리터럴로 생성된 String -> JVM 관리(String Pool)에 만들어짐
+	 * - new 연산자로 생성된 String -> 사용자 관리(Heap)에 만들어짐
+	 * 서로 다른 영역에 생성됨
+	 */
+	public void method5()	{
+		String temp1 = "abcd";//리터럴로 생성
+		String temp2 = new String("abcd"); //new 연산자로 생성
+		String temp3 = new String("abcd"); //new 연산자로 생성
+		
+		System.out.println("temp1 : "+System.identityHashCode(temp1));
+		System.out.println("temp2 : "+System.identityHashCode(temp2));
+		System.out.println("temp3 : "+System.identityHashCode(temp3));
+		//저장되는 값은 다 똑같은데 셋 다 주소가 다름! == "abcd"를 재활용하지 않음
+		//	->값은 같지만 전부 다른 객체라는 뜻(매번 값은 같지만 다른 객체가 생성됨)
+	}
+	/**
+	 * StringBuilder / StringBuffer 클래스
+	 * - String의 불변성 문제를 해결한 클래스
+	 * -> 가변성(mutable)
+	 * - 두 개의 쓰는 작성법이 동일한데 StringBuilder의 사용을 권장/추천
+	 * 
+	 * - StringBuilder : Thread Safe 미제공 (비동기로 동작)(동시에 일을 함, 멀티태스킹)
+	 * - StringBuffer : Thread Safe 제공 (동기로 동작)(순서대로 일을 함)
+	 * 
+	 * - 기본 16글자 저장할 크기로 생성
+	 * 		저장되는 문자열의 길이에 따라 크기가 증가/감소(가변성)
+	 * 		(컬렉션이 알아서 늘었다 줄었다 하는 것처럼)
+	 * 	->마음대로 문자열 수정/삭제가 가능함!!!!
+	 * (수정/삭제를 아무리 해도 추가적인 객체 생성이 없어 메모리 낭비 없음, 효율 좋음)
+	 */
+	public void method6()	{
+		//StringBuilder 객체 생성해야 함 (리터럴로 할 순 없음)
+		StringBuilder sb = new StringBuilder();
+		
+		//StringBuilder 객체에 문자열을 쌓아 나가는 방식으로 사용
+		// -> 뒤에 추가, 앞에 추가 등이 가능
+		// a -> ab -> cab 가능
+		
+		//append : 뒤에 추가
+		sb.append("오늘 점심은 "); //"오늘 점심은 "
+		System.out.println(System.identityHashCode(sb));
+		
+		sb.append("무엇을 먹을까요?"); //"오늘 점심은 무엇을 먹을까요?"
+		//매개변수에 따라 같은 함수 사용 : 오버로딩
+		System.out.println(System.identityHashCode(sb));
+		
+		sb.insert(0, "2월 14일 "); //0번인덱스에 삽입 == 제일 앞에 추가
+		System.out.println(System.identityHashCode(sb));
+		//출력
+		System.out.println(sb);
+		//identityHashCode(sb) 값이 일정함
+		//==참조하는 객체가 변하지 않음(셋 다 주소가 같음)
+		// 객체 내에 값만 수정되고 있다
+		//==가변성, 이게 더 효율 좋다
+		
+		//StringBuilder(자바에서만 사용 가능함)->String 변환
+		String temp = sb.toString(); 
+		//toString() : 객체가 가지고 있는 필드를 문자열로 바꿔주는 메서드
+		
+		//String[] 문자열.split("구분자")
+		//- 문자열을 "구분자"를 기준으로 쪼개어 String[]로 반환(String배열로 반환)
+		//띄어쓰기를 구분자로 삼아서 0,1,2,...인덱스로 문자열로 쪼개보기
+		String[] arr = temp.split(" ");
+		for(String str : arr) {
+			System.out.println(str);
+		}
 	}
 }
