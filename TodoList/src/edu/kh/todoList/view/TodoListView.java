@@ -102,6 +102,7 @@ public class TodoListView {
 		//완료된 개수 / 전체 할일 수 카운트
 		Map<String, Object> map = service.todoListFullView();
 		//value로 List가 올 수도 있고 int를 받아올 수도 있으므로 최상위 객체로 함
+		//무엇이든지 받아올 수 있도록 최상위 부모 Object로 함
 		//근데 int가 Integer로 Autoboxing진행돼서 들어옴
 		//반환 받아옴
 		
