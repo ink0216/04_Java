@@ -32,10 +32,11 @@ public class ArrayPractice {
 		System.out.println(sum);
 		
 	}
-	/**
+	/**<pre>
 	 * 실습문제 2
 	 * 9 8 7 6 5 4 3 2 1
 	 * 홀수 번째 인덱스 합 : 20
+	 * </pre>
 	 */
 	public void practice2() {
 		/*길이가 9인 배열을 선언 및 할당하고, 
@@ -55,17 +56,16 @@ public class ArrayPractice {
 		System.out.print("홀수 번째 인덱스 합 :"+sum);
 		
 	}
-	/**
-	 * 입력 받은 양의 정수만큼 배열 크기를 할당하고
-	 * 1부터 입력받은 값까지 배열에 초기화한 후 출력
-	 */
-//	public void practice3() {
-//		System.out.print("양의 정수 :");
-//		int input = sc.nextInt();
-//		int [] arr = new int[input];
-//		for(int i=1 ; i<=input ; i++) {arr[i]=i;
-//		System.out.print(arr[i] +" ");}
-//	}
+
+	
+//public void practice3() {
+//System.out.print("양의 정수 :");
+//int input = sc.nextInt();
+//int [] arr = new int[input];
+//for(int i=1 ; i<=input ; i++) {arr[i]=i;
+//System.out.print(arr[i] +" ");}
+//}
+
 	/**
 	 * <pre>
 	 * 입력 받은 양의 정수만큼 배열 크기를 할당하고
@@ -93,13 +93,13 @@ public class ArrayPractice {
 		
 				}
 	//초기화 = 처음으로 값을 대입하는 것
-	/**
+	/**<pre>
 	 * 정수 5개를 입력받아 배열 초기화하고
 	 * 검색할 정수를 하나 입력 받아
 	 * 배열에서 같은 수가 있는 인덱스를 찾아 출력
 	 * 같은 수가 없을 경우 
 	 * "일치하는 값이 존재하지 않습니다"출력
-	 * 
+	 * </pre>
 	 */
 	public void practice4() {
 		int[] arr = new int[5];
@@ -166,13 +166,14 @@ public class ArrayPractice {
 		//그 위는 print라서 한줄로 나오는데
 		//총합은 다음줄에 나왔으면 좋겠어서;
 	}
-	/**
+	/**<pre>
 	 * 주민등록번호를 입력받아
 	 * char배열에 저장한 후 출력
 	 * 단, 뒷자리의 성별 번호 이후부터는 *로 저장 
 	 * charAt사용
 	 * 주민등록번호(-포함) :
 	 * 123456-2****** 총 14자리->char배열 14칸짜리
+	 * </pre>
 	 */
 	public void practice6() {
 		//주민등록번호를 저장할 char배열 생성
@@ -206,7 +207,7 @@ public class ArrayPractice {
 			System.out.print(arr[i]);
 		}
 	}
-	/**
+	/**<pre>
 	 * [실습문제 7]
 	 * 3이상인 홀수를 입력 받아 
 	 * 배열의 중간까지는 1부터 1씩 증가하여 오름차순으로 값을 넣고,
@@ -217,6 +218,7 @@ public class ArrayPractice {
 숫자가 늘었다 줄었다 
 ->인덱스 값의 1더한 값 대입하는 방법도 있는데 그거 말고 !
 ->카운트가 1로 시작해서 절반까지는 증가했다가(++) 감소하도록(--) 해보기! 
+</pre>
 	 */
 	public void practice7() {
 		//while문으로 조건에 맞는 수가 입력될 때까지 반복
@@ -250,9 +252,10 @@ public class ArrayPractice {
 		System.out.println(Arrays.toString(arr)); //저 모양의 문자열로 바꿔서 콘솔에 출력해라
 	}
 	
-	/**
+	/**<pre>
 	 * 10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고,
 1~10 사이의 난수를 발생시켜 배열에 초기화한 후 출력하세요.
+</pre>
 	 */
 	public void practice8() {
 		int[] randoms = new int[10];
@@ -266,10 +269,11 @@ public class ArrayPractice {
 		}
 		System.out.println("발생한 난수 :" +str);
 	}
-	/**
+	/**<pre>
 	 * 10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고,
 1~10 사이의 난수를 발생시켜 배열에 초기화한 후 출력하세요.
 +최대값, 최소값 구하기
+</pre>
 	 */
 	public void practice9() {
 		int[] randoms = new int[10];
@@ -301,9 +305,10 @@ public class ArrayPractice {
 		System.out.println("최대값 :" +max);
 		System.out.println("최소값 :" +min);
 	}
-	/**
+	/**<pre>
 	 * 10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고
 1~10 사이의 난수를 발생시켜 "중복된 값이 없게" 배열에 초기화한 후 출력하세요.
+</pre>
 	 */
 	public void practice10() {
 		int[] randoms = new int[10];
@@ -346,12 +351,13 @@ public class ArrayPractice {
 		System.out.println("발생한 난수 :" +str);
 	}
 	
-	/**
+	/**<pre>
 	 * [실습문제 11]
 	 * 로또 번호 자동 생성기 프로그램을 만들기.
 (중복 값 없이 오름차순으로 정렬하여 출력하세요.)
 1~45번 숫자
 숫자 6개 선택
+</pre>
 	 */
 	public void practice11() {
 		//1) 크기가 6인 정수형 배열 생성
@@ -404,6 +410,78 @@ public class ArrayPractice {
 		
 		//결과 출력
 		System.out.println(Arrays.toString(lotto));
+	}
+	/**<pre>
+	 * [실습 문제 12]
+	 * 
+	 * 문자열을 입력 받아 문자열에 어떤 문자가 들어갔는지 배열에 저장하고
+	문자의 개수와 함께 출력하세요. (중복 제거)
+	[실행 화면]
+문자열 : application
+문자열에 있는 문자 : a, p, l, i, c, t, o, n
+문자 개수 : 8
+</pre>
+	 */
+	public void practice12() {//미완성!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		System.out.print("문자열 입력 : ");
+		String str = sc.nextLine();
+		int size = str.length();
+		for(int i=0 ; i<size; i++) {
+			
+		}
+	}
+	/**
+	 * <pre>
+	 * 사용자가  입력한  배열의  길이만큼의  String 배열을  선언  및  할당하고 
+배열의  인덱스에  넣을  값  역시  사용자가  입력하여  초기화  하세요. 
+단, 사용자에게  배열에  값을  더  넣을지  물어보고  몇  개를  더  입력할  건지, 
+늘린  곳에  어떤  데이터를  넣을  것인지  받으세요.
+사용자가  더  이상  입력하지  않겠다고  하면  배열  전체  값을  출력하세요.
+(배열의  얕은  복사, 깊은  복사를  이용하는  문제)
+	 * </pre>
+	 * <pre>
+	 * 배열의    크기를    입력하세요    : 3 
+1번째    문자열    : 자바의    정석
+2번째    문자열    : 알고리즘
+3번째    문자열    : C프로그래밍
+더    값을    입력하시겠습니까?(Y/N) : y 
+더    입력하고    싶은    개수    : 2
+4번째 문자열 : 인간관계 
+5번째 문자열 : 자기계발
+더    값을    입력하시겠습니까?(Y/N) : y 
+더    입력하고    싶은    개수    : 1
+6번째    문자열    : 영단어600
+더    값을    입력하시겠습니까?(Y/N) : n
+[자바의 정석, 알고리즘, C프로그래밍, 인간관계, 자기계발, 영단어600]
+	 * </pre>
+	 */
+	public void practice13() {//미완성!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		
+		System.out.print("배열의 크기를 입력하세요 : ");
+		int input = sc.nextInt();
+		String[] str = new String[input];
+		for(int i=0; i<str.length; i++) {
+			System.out.printf("%d번째 문자열 : ", i+1);
+			str[i] = sc.nextLine();
+		
+		while(true) {
+		System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+		char yn = sc.next().toLowerCase().charAt(0);
+		if(yn == 'n') break;
+		System.out.print("더 입력하고 싶은 개수 : ");
+		int input2 = sc.nextInt();
+		for(int j=0; j<input2; j++) {
+			System.out.printf("%d번째 문자열 : ", j+i+1);
+			
+			String[] arr2 = new String[input2];
+			arr2[j] =sc.nextLine(); 
+		}
+		}
+		
+		
+		}
+		System.out.println(str.toString());
+		
 	}
 }
 		

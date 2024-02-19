@@ -88,6 +88,7 @@ public class Student {
 	/**
 	 *객체.toString() : 객체의 필드를 하나의 문자열로 만들어서 반환
 	 */
+	
 	public String toString() {
 		return String.format("%s / %c / %s \n"
 				+ "HTML : %d / CSS : %d / JS : %d / Java : %d", 
